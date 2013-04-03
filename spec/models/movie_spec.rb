@@ -10,7 +10,7 @@ describe Movie do
     it 'should call Movie with director' do
       Movie.should_receive(:find).with(@fake_movie.id.to_s).
         and_return(@fake_movie)
-      Movie.should_receive(:where).
+      Movie.should_receive(:where).with(:director => @fake_movie.director).
         and_return(@fake_results)
       Movie.FindMoviesWithSameDirector(@fake_movie.id.to_s)
       
