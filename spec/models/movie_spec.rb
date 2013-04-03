@@ -7,7 +7,7 @@ describe Movie do
   end
   
    describe 'searching same director' do
-    it 'should call Movie with director' do
+    it 'should search movies with director' do
       Movie.should_receive(:find).with(@fake_movie.id.to_s).
         and_return(@fake_movie)
       Movie.should_receive(:where).with(:director => @fake_movie.director).
